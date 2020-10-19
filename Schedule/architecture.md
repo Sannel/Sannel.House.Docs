@@ -23,7 +23,7 @@ __Devices__
 |Column|Type|Key|Nullable|
 |--|--|--|--|
 |LocalDeviceId|Guid|Primary Key|false|
-|DeviceId|int|Virtual Foreign Key(Devices Service)|false|
+|DeviceId|int|Virtual Foreign Key(Devices Service)|true|
 |Uuid|Guid|Index(Uuid)|true|
 |MacAddress|long|Index(MacAddress)|true|
 |Manufacture|string|Index(Manufacture, ManufactureId)|true|
@@ -54,3 +54,5 @@ __ScheduleStarts__
 |Duration|int||true|
 |ValueMin|double||false|
 |ValueMax|double||true|
+
+Note: ValueMin and ValueMax are the same concepts as DefaultValueMin and DefaultValueMax in Schedules.

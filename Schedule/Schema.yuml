@@ -1,0 +1,6 @@
+// {type: class}
+// {direction: topDown}
+// {generate: true}
+[Schedules]<>*-1>[Devices]
+[Schedules]<>1-*>[ScheduleStarts]
+[Schedules]<>1-*>[ScheduleProperties]

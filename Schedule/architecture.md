@@ -1,4 +1,4 @@
-## Table Schema
+## Schedule Table Schema
 ![Table Relationships](Schema.svg)
 <br />
 <br />
@@ -10,7 +10,11 @@ __Schedules__
 |ScheduleId|long|Primary Key|false|
 |LocalDeviceId|Guid|Foreign Key(Devices)|false|
 |ScheduleKey|Guid|Index|false|
-|DefaultValue|double||false|
+|DefaultMinValue|double||false|
+|DefaultMaxValue|double||true|
+|MinimumDifference|double||true|
+
+Note: DefaultMinValue is always required but DefaultMaxValue does not have to be set but is used for schedules like temperature. So you can say if its less then 70 degrees turn the heater on if the more then 80 degrees turn on the ac. But if this schedule was for sprinklers we would not need the DefaultMaxValue instead we would use DefaultMinValue as a flag value to say which zone should be turned on though it would probably be 0 here. MinimumDifference is so you can say DefaultMinValue and DefaultMaxValue must be separated by at least MinimumDifference in everything pertaining to this schedule.
 
 <br />
 
@@ -48,4 +52,5 @@ __ScheduleStarts__
 |Start|DateTimeOffset||false|
 |Type|Enum(DayOfWeek,Interval,Date,Length)||false|
 |Duration|int||true|
-|Value|double||false|
+|ValueMin|double||false|
+|ValueMax|double||true|

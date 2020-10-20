@@ -1,0 +1,12 @@
+// {type:state}
+// {generate:true}
+
+(start)[New Request]->(Is Model Valid)
+(Is Model Valid)[No]->(Return Error Model)
+(Is Model Valid)[Yes]->(Does Model Schedule Key Exist)
+(Does Model Schedule Key Exist)[Yes]->(Delete Schedule In Database)
+(Does Model Schedule Key Exist)[No]->(Return Error Model)->(end)
+(Delete Schedule In Database)[Success]->(Return Success Model)
+(Delete Schedule In Database)[Success]->(Send Delete Message)
+(Delete Schedule In Database)[Error]->(Return Error Model)
+(Return Success Model)->(end)

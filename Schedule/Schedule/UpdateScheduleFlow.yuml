@@ -1,0 +1,12 @@
+// {type:state}
+// {generate:true}
+
+(start)[New Request]->(Is Model Valid)
+(Is Model Valid)[No]->(Return Error Model)
+(Is Model Valid)[Yes]->(Does Model Schedule Key Exist)
+(Does Model Schedule Key Exist)[Yes]->(Update Schedule In Database)
+(Does Model Schedule Key Exist)[No]->(Return Error Model)->(end)
+(Update Schedule In Database)[Success]->(Return Success Model)
+(Update Schedule In Database)[Success]->(Send Update Message)
+(Update Schedule In Database)[Error]->(Return Error Model)
+(Return Success Model)->(end)

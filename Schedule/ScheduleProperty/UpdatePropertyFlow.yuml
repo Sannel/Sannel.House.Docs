@@ -1,0 +1,15 @@
+// {type:state}
+// {generate:true}
+
+(start)[New Request]->(Is Model Valid)
+(Is Model Valid)[No]->(Return Error Model)
+(Is Model Valid)[Yes]->(Does Schedule Key Exist)
+(Does Schedule Key Exist)[No]->(Return Error Model)
+(Does Schedule Key Exist)[Yes]->(Does Property Name Exist)
+(Does Property Name Exist)[No]->(Return Error Model)
+(Does Property Name Exist)[Yes]->(Update Property Value in Database)
+(Update Property Value in Database)[Error]->(Return Error Model)
+(Update Property Value in Database)[Success]->(Return Success Model)
+(Update Property Value in Database)[Success]->(Broadcase Update Property Message)
+(Return Error Model)->(end)
+(Return Success Model)->(end)

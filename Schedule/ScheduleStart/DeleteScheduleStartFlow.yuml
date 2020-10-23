@@ -1,0 +1,15 @@
+// {type:state}
+// {generate:true}
+
+(start)[New Request]->(Is Model Valid)
+(Is Model Valid)[No]->(Return Error Model)
+(Is Model Valid)[Yes]->(Does Schedule Key Exist)
+(Does Schedule Key Exist)[No]->(Return Error Model)
+(Does Schedule Key Exist)[Yes]->(Does Start Time id Exist)
+(Does Start Time id Exist)[No]->(Return Error Model)
+(Does Start Time id Exist)[Yes]->(Delete Start Time From Database)
+(Delete Start Time From Database)[Error]->(Return Error Model)
+(Delete Start Time From Database)[Success]->(Return Success Model)
+(Delete Start Time From Database)[Success]->(Send Delete Message)
+(Return Error Model)->(end)
+(Return Success Model)->(end)

@@ -6,3 +6,4 @@ Schedule manage for devices. Used for thinks like Sprinklers and Thermostat.
 * [Table Schema](Schema.md)
 * [Schedule Flows](ScheduleFlows.md)
 * [Schedule Property Flows](ScheduleProperties.md)
+* [Schedule Start Flows](ScheduleStart.md)

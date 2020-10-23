@@ -1,0 +1,17 @@
+// {type:state}
+// {generate:true}
+
+(start)[New Request]->(Is Model Valid)
+(Is Model Valid)[No]->(Return Error Model)
+(Is Model Valid)[Yes]->(Does Schedule Key Exist)
+(Does Schedule Key Exist)[No]->(Return Error Model)
+(Does Schedule Key Exist)[Yes]->(Does Start Time id Exist)
+(Does Start Time id Exist)[No]->(Return Error Model)
+(Does Start Time id Exist)[Yes]->(Does Updated Start Time Already Exist)
+(Does Updated Start Time Already Exist)[Yes]->(Return Error Model)
+(Does Updated Start Time Already Exist)[No]->(Update Start Time In Database)
+(Update Start Time In Database)[Error]->(Return Error Model)
+(Update Start Time In Database)[Success]->(Return Success Model)
+(Update Start Time In Database)[Success]->(Broadcase Update Start Time message)
+(Return Error Model)->(end)
+(Return Success Model)->(end)

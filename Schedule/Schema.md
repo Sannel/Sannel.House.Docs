@@ -27,7 +27,7 @@ __ScheduleProperties__
 |SchedulePropertyId|Guid|Primary key|false|
 |ScheduleId|long|Foreign Key(Schedules)|false|
 |Name|string(512)|Index|false|
-|Value|string(1024)||true|
+|Value|string(1024)||false|
 
 <br />
 

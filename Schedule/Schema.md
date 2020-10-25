@@ -40,7 +40,7 @@ __ScheduleStarts__
 |Name|string(255)||false|
 |Start|DateTimeOffset||false|
 |Type|Enum(Interval,DayOfWeek,Date)||false|
-|Duration|int||true|
+|DurationMinutes|int||true|
 |ValueMin|double||false|
 |ValueMax|double||true|
 

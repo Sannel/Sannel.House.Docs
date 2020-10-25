@@ -39,7 +39,7 @@ __ScheduleStarts__
 |ScheduleId|long|Foreign Key(Schedules)|false|
 |Name|string(255)||false|
 |Start|DateTimeOffset||false|
-|Type|Enum(DayOfWeek,Interval,Date,Length)||false|
+|Type|Enum(Interval,DayOfWeek,Date)||false|
 |Duration|int||true|
 |ValueMin|double||false|
 |ValueMax|double||true|

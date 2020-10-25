@@ -1,0 +1,17 @@
+// {type:state}
+// {generate:true}
+
+(start)[Begin Request]->(Is The Model Valid)
+(Is The Model Valid)[No]->(Return Error Model)
+(Is The Model Valid)[Yes]->(Does The Schedule Key Exist)
+(Does The Schedule Key Exist)[No]->(Return Error Model)
+(Does The Schedule Key Exist)[Yes]->(Get Schedule Default From Database)
+(Get Schedule Default From Database)[Does Not Exist]->(Return Error Model)
+(Get Schedule Default From Database)[Exists]->(Get Intervals that match Date)
+(Get Intervals that match Date)->(Get DayOfWeek that match Date)
+(Get DayOfWeek that match Date)->(Get By Date that match Date)
+(Get By Date that match Date)->(Merge all three together using priority as follows: Date>DayOfWeek>Interval)
+(Merge all three together using priority as follows: Date>DayOfWeek>Interval)->(If a start time does not have a length its concidered to be in affect until a later start)->(Fill In Blank zones with default value)->(Return Success Model)
+
+(Return Error Model)->(end)
+(Return Success Model)->(end)

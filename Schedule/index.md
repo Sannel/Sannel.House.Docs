@@ -7,3 +7,4 @@ Schedule manage for devices. Used for thinks like Sprinklers and Thermostat.
 * [Schedule Flows](ScheduleFlows.md)
 * [Schedule Property Flows](ScheduleProperties.md)
 * [Schedule Start Flows](ScheduleStart.md)
+* [Get Day Schedule Flow](GetDaySchedule.md)

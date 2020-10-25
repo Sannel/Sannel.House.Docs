@@ -1,6 +1,6 @@
 [Home](../index.md)
 # Sannel.House.Schedule
-Schedule manage for devices. Used for thinks like Sprinklers and Thermostat.
+Schedule manage for devices. Used for things like Sprinklers and Thermostats.
 
 ## Architecture
 * [Table Schema](Schema.md)

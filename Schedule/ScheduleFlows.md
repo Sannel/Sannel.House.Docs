@@ -1,4 +1,8 @@
 [Home](../index.md) -> [Schedule](index.md)
+
+# Extra Validation Rules
+DefaultMinValue and DefaultMaxValue must differ by at least MinimumDifference.
+
 # Add Schedule Flow
 ![Add Schedule Flow](Schedule/AddScheduleFlow.svg)
 # Update Schedule Flow

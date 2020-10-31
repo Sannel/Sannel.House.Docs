@@ -1,0 +1,8 @@
+// {type:state}
+// {generate:true}
+
+
+(start)[New Request]->(Is Model Valid)
+(Is Model Valid)[No]->(Return Error Model)->(end)
+(Is Model Valid)[Yes]->(Get Page From Database)
+(Get Page From Database)->(Return Success Model)->(end)
